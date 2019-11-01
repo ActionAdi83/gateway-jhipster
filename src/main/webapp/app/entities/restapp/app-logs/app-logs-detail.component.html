@@ -1,0 +1,59 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="appLogs">
+            <h2><span>App Logs</span> {{appLogs.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Log Id</span></dt>
+                <dd>
+                    <span>{{appLogs.logId}}</span>
+                </dd>
+                <dt><span>Entry Date</span></dt>
+                <dd>
+                    <span>{{appLogs.entryDate}}</span>
+                </dd>
+                <dt><span>Logger</span></dt>
+                <dd>
+                    <span>{{appLogs.logger}}</span>
+                </dd>
+                <dt><span>Log Level</span></dt>
+                <dd>
+                    <span>{{appLogs.logLevel}}</span>
+                </dd>
+                <dt><span>Message</span></dt>
+                <dd>
+                    <span>{{appLogs.message}}</span>
+                </dd>
+                <dt><span>Username</span></dt>
+                <dd>
+                    <span>{{appLogs.username}}</span>
+                </dd>
+                <dt><span>Aplicatie</span></dt>
+                <dd>
+                    <span>{{appLogs.aplicatie}}</span>
+                </dd>
+                <dt><span>Cod</span></dt>
+                <dd>
+                    <span>{{appLogs.cod}}</span>
+                </dd>
+                <dt><span>Tip</span></dt>
+                <dd>
+                    <span>{{appLogs.tip}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/app-logs', appLogs.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

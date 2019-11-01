@@ -1,0 +1,74 @@
+<div>
+    <h2 id="page-heading">
+        <span>App Logs</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-app-logs" [routerLink]="['/app-logs/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span >
+            Create a new App Logs
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="appLogs?.length === 0">
+        <span>No appLogs found</span>
+    </div>
+    <div class="table-responsive" *ngIf="appLogs?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th scope="col" ><span>ID</span></th>
+            <th scope="col" ><span>Log Id</span></th>
+            <th scope="col" ><span>Entry Date</span></th>
+            <th scope="col" ><span>Logger</span></th>
+            <th scope="col" ><span>Log Level</span></th>
+            <th scope="col" ><span>Message</span></th>
+            <th scope="col" ><span>Username</span></th>
+            <th scope="col" ><span>Aplicatie</span></th>
+            <th scope="col" ><span>Cod</span></th>
+            <th scope="col" ><span>Tip</span></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let appLogs of appLogs ;trackBy: trackId">
+                <td><a [routerLink]="['/app-logs', appLogs.id, 'view' ]">{{appLogs.id}}</a></td>
+                <td>{{appLogs.logId}}</td>
+                <td>{{appLogs.entryDate | date:'medium'}}</td>
+                <td>{{appLogs.logger}}</td>
+                <td>{{appLogs.logLevel}}</td>
+                <td>{{appLogs.message}}</td>
+                <td>{{appLogs.username}}</td>
+                <td>{{appLogs.aplicatie}}</td>
+                <td>{{appLogs.cod}}</td>
+                <td>{{appLogs.tip}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/app-logs', appLogs.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/app-logs', appLogs.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/app-logs', { outlets: { popup: appLogs.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

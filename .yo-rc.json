@@ -1,0 +1,44 @@
+{
+  "generator-jhipster": {
+    "applicationType": "gateway",
+    "gitCompany": "",
+    "baseName": "Gateway",
+    "packageName": "ro.siveco.jhipster",
+    "packageFolder": "ro/siveco/jhipster",
+    "serverPort": 8085,
+    "serviceDiscoveryType": "eureka",
+    "authenticationType": "jwt",
+    "uaaBaseName": "../uaa",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "postgresql",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "enableSwaggerCodegen": false,
+    "messageBroker": false,
+    "buildTool": "maven",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "testFrameworks": [],
+    "enableTranslation": false,
+    "nativeLanguage": "en",
+    "languages": [
+      "en"
+    ],
+    "clientFramework": "angularX",
+    "jhiPrefix": "jhi",
+    "jhipsterVersion": "6.4.1",
+    "jwtSecretKey": "YjdkNTg4NDdlNzY3Y2FjZDA2ZmEwMzc5MmFiNWFjMjQ5YTQ4YjA0MWY2Mjk3ZTQ5YWYxM2E2NTc5NzMyMjgyZmZlNGU2YThiMTRjYjA1YzY0MDIyNTljZDkwODRiMDFkNzdhNTE0NjkyNTAyNmY4YTcyYzZlMjJlOTkzMWZmOWM=",
+    "embeddableLaunchScript": false,
+    "clientTheme": "none",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "blueprints": [],
+    "promptValues": {
+      "microservicePath": "c:\\worksiveco\\jhipster"
+    }
+  }
+}
